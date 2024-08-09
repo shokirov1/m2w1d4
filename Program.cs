@@ -4,6 +4,7 @@ using m2w1d4.Task3;
 using m2w1d4.Task4;
 using m2w1d4.Task5;
 using m2w1d4.Task6;
+using System.ComponentModel;
 
 //Task-1
 Console.WriteLine();
@@ -48,6 +49,16 @@ Console.WriteLine();
 Task6 task6 = new Task6();
 task6.DateTimeShow();
 
-Console.WriteLine();
-Console.WriteLine("----------------------------------------");
-Console.ReadKey();
+Person<int, string> person = new Person<int, string>(48, "dfsd");
+Console.WriteLine(person.Id +" "+ person.Name);
+class Person<T, Y>
+{
+    public T Id { get; set; }
+    public Y Name { get; set; }
+    public Person(T id, Y name)
+    {
+        Id = id;
+        Name = name;
+    }
+}
+
